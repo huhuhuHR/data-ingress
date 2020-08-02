@@ -1,0 +1,59 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                 "byte": 1048576
+            },
+                "errorLimit": {
+                "record": 0,
+                "percentage": 0.02
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "postgresqlreader",
+                    "parameter": {
+                        "username": "postgres",
+                        "password": "huorong",
+                        "column": [
+                            "*"
+                        ],
+                        "splitPk": "id",
+                        "connection": [
+                            {
+                                "table": [
+                                    "person"
+                                ],
+                                "jdbcUrl": [
+                                    "jdbc:postgresql://192.168.42.145:5432/postgres"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "postgresqlwriter",
+                    "parameter": {
+                        "username": "postgres",
+                        "password": "huorong",
+                        "column": [
+                             "*"
+                        ],
+                        "preSql": [
+                            "delete from person_a"
+                        ],
+                        "connection": [
+                            {
+                                "jdbcUrl": "jdbc:postgresql://192.168.42.145:5432/postgres",
+                                "table": [
+                                    "person_a"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
