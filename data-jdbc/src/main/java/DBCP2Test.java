@@ -223,7 +223,7 @@ public class DBCP2Test {
 
             return DatatypeConverter.printHexBinary(bytesOfDigest);
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
-            System.out.println("Unable to generate fingerprint for the provided additional resources {}" + new Object[]{urls, e});
+            System.out.println("Unable to generate fingerprint for the provided additional resources {}" + Arrays.toString(new Object[]{urls, e}));
             return null;
         }
     }
@@ -242,7 +242,7 @@ public class DBCP2Test {
         return new URLClassLoader(modules, parentClassLoader);
     }
 
-    class DriverShim implements Driver {
+    static class DriverShim implements Driver {
         private Driver driver;
 
         DriverShim(Driver d) {
