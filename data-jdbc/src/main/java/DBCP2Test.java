@@ -20,7 +20,7 @@ public class DBCP2Test {
         // 所使用的JDBC驱动的类全名
         String DB_DRIVERNAME = "com.mysql.jdbc.Driver";
         // JDBC 驱动路径
-        String DB_DRIVER_LOCATION = "E:\\code\\dix-source\\dix-source\\template\\smx-wxqb-3.5.0\\jdbc\\mysql-connector-java-5.1.44.jar";
+        String DB_DRIVER_LOCATION = "mysql-connector-java-5.1.44.jar";
         // 通过JDBC建立一个连接所需的用户名
         String DB_USER = "root";
         // 	通过JDBC建立一个连接所需的密码
